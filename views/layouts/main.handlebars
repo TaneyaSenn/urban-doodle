@@ -11,10 +11,27 @@
             {{/if}}
         </title>
         <script src="../public/client.js"></script>
+        <link href="../../public/app.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
+        <nav class="navbar" id="navbar-id">
+            <ul>
+                <li>
+                    <a href="/" {{#if home}} class="active" {{/if}}>home</a>
+                </li>
+                <li>
+                    <a href="" {{#if --}} class="active" {{/if}}>about</a>
+                </li>
+                <li>
+                    <a href="" {{#if --}} class="active" {{/if}}>contact</a>
+                </li>
+                <li>
+                    <a href="" {{#if --}} class="active" {{/if}}></a>
+                </li>
+            </ul>
+        </nav>
         {{{body}}}    
     </body>
-    
+
 </html>
