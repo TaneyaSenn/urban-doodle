@@ -19,7 +19,9 @@ app.use(express.urlencoded({extended: false }));
 
 
 // setup routes
-app.use(require("./routes/app-routes"));
+const appRouter = require("./routes/app-routes.js");
+app.use(appRouter);
+// app.use(require("./routes/app-routes.js"));
 
 // start server running
 app.listen(port, function(){

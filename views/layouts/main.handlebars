@@ -10,28 +10,46 @@
             website.com
             {{/if}}
         </title>
-        <script src="../public/client.js"></script>
-        <link href="../../public/app.css" rel="stylesheet" type="text/css">
+        
+        {{!-- bootstrap, CSS & client JS--}}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="app.css" rel="stylesheet" type="text/css">
+        <script src="client.js"></script>
+
     </head>
 
     <body>
-        <nav class="navbar" id="navbar-id">
+        <nav class="navbar navbar-nav">
             <ul>
-                <li>
-                    <a href="/" {{#if home}} class="active" {{/if}}>home</a>
+
+                <li class="navbar-nav">
+                    <a href="/" class="nav-link {{#if home}} active {{/if}}">home</a>
                 </li>
-                <li>
-                    <a href="" {{#if --}} class="active" {{/if}}>about</a>
+                <li class="navbar-nav">
+                    <a href="/about" class="nav-link {{#if about}} active {{/if}}">about</a>
                 </li>
-                <li>
-                    <a href="" {{#if --}} class="active" {{/if}}>contact</a>
+                <li class="navbar-nav">
+                    <a href="/connect" class="nav-link {{#if contact}} active {{/if}}">connect</a>
                 </li>
-                <li>
-                    <a href="" {{#if --}} class="active" {{/if}}></a>
+
+                {{#if user}}
+                <li class="navbar-nav">
+                    <a href="/logout" class="nav-link {{#if logout}} active {{/if}}">log out</a>
                 </li>
+                {{else}}
+                <li class="navbar-nav">
+                    <a href="/login" class="nav-link {{#if login}} active {{/if}}">log in</a>
+                </li>
+                <li class="navbar-nav">
+                    <a href="/signup" class="nav-link {{#if signup}} active {{/if}}">sign up</a>
+                </li>
+                {{/if}}
+
             </ul>
         </nav>
+
         {{{body}}}    
+
     </body>
 
 </html>

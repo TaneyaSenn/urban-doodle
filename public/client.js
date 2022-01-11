@@ -1,11 +1,11 @@
-const { appendFile } = require("fs");
+// const { appendFile } = require("fs");
 
 window.addEventListener("load", function(){
 
 fetchCat();
 
 async function fetchCat() {
-    const response = await fetch("/cat");
+    const response = await fetch("./cat?");
     const json = await response.json;
     displayCat(json);
 }
