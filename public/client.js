@@ -1,4 +1,4 @@
-// const { appendFile } = require("fs");
+const { appendFile } = require("fs");
 
 window.addEventListener("load", function(){
 
