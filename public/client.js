@@ -5,7 +5,7 @@ window.addEventListener("load", function(){
 fetchCat();
 
 async function fetchCat() {
-    const response = await fetch("./cat");
+    const response = await fetch("/cat");
     const json = await response.json;
     displayCat(json);
 }
